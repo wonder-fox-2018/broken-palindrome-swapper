@@ -5,21 +5,39 @@
  * @param {string} str - input kata yang ingin di-swap dan dicek palindrom
  * @returns {boolean} true bila kata yang di-swap adalah palindrom
  */
+/*
+KONDISI AWAL
+Fungsi tidak melakukan swap huruf
+MUST TO DO
+membenarkan funsi agar bisa sesuai ekspektasi
+TO DO
+cari cara swap angka dari urutan terdepan ke terbelakang
+*/
 function palindromeSwapper(str) {
-  let newStr = '';
+  
   for (var i = 0; i < str.length; i++) {
-    for (var j = 0; j < str.length; i++) {
+    debugger
+    let newStr = '';
+    for (var j = 0; j < str.length; j++) {
       if (i === j) {
-        newStr += str[j++];
-        newStr += str[j];
-        j++;
+        if (i+1===str.length){
+          newStr += str[j];
+        } 
+        else {
+          newStr += str[j+1];
+          debugger
+          newStr += str[j];
+          debugger
+          j++
+        }
       } else {
         newStr += str[j];
       }
+      
     }
-    if (isPalindrome(newStr)) return true;
+    if (isPalindrome(newStr)===true) return true;
   }
-  return false;
+  return false;debugger
 }
 
 /**
@@ -29,8 +47,8 @@ function palindromeSwapper(str) {
  * @returns {boolean} true bila kata adalah palindrom
  */
 function isPalindrome(str) {
-  if (str.split('').reverse().join() === str) return console.log(true);
-  return console.log(false);
+  if (str.split('').reverse().join('') === str) return true;
+  return false;
 }
 
 console.log(palindromeSwapper('arcecar')); // TRUE
