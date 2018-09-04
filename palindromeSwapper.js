@@ -10,25 +10,20 @@ function palindromeSwapper(str) {
   for (var i = 0; i < str.length; i++) {
     let newStr = '';
     for (var j = 0; j < str.length; j++) {
-      debugger
       if (i === j) {
         if(i===str.length-1){
           newStr += str[j];
-          debugger
         }
         else{
           newStr += str[j+1];
           newStr += str[j];
           j++
-          debugger
         }
       }
       else {
         newStr += str[j];
-        debugger
       }
     }
-    debugger
     if (isPalindrome(newStr)) return true;
   }
   return false;
