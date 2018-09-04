@@ -11,16 +11,17 @@ function palindromeSwapper(str) {
     var newStr = ''; // pindah dari line 9 dan di ganti var
     for (var j = 0; j < str.length; j++) { // i di ganti j 
       if (i === j) {
-        if (str[j+1] === undefined) newStr += str[j];   //tambah kondisi untuk handel undefined
-        else newStr += str[j+1] + str[j];
+        if (str[j+1] === undefined) {
+          newStr += str[j];   //tambah kondisi untuk handel undefined
+        }
+        else {
+          newStr += str[j+1] + str[j];
+        }
         j++;
         
       } else {
-        newStr += str[j];
-        
-      }
-      // console.log(newStr);
-      
+        newStr += str[j];      
+      }   
     }
     if (isPalindrome(newStr)) return true;  
   } 
